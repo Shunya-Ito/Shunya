@@ -1,0 +1,4 @@
+<h1>マイページ</h1>
+<%= link_to '登録情報修正', societies_edit_path %>
+<%= link_to 'ログアウト', destroy_society_session_path, method: :delete %>
+<%= link_to "メッセージ", rooms_path(current_user.id),method: :post %><br />

@@ -1,0 +1,54 @@
+<h1>チャットサンプル</h1>
+<!--Userでログインしてたら-->
+<% if user_signed_in? %>
+  ~<%= current_user.name %>がログインしてます~
+  <%= link_to "ログアウト", destroy_user_session_path ,:method => :delete %>
+  <br>
+  <h2>ショップ一覧</h2>
+  <br>
+
+  <% @societies.each do |society| %>
+    <%= society.name %>
+    <!-- もしチャットルームがあったらそのチャットページへ。なければ新たなチャットルームを作成 -->
+    <% if @society_ids.include?(society.id) %>
+      <br>
+      <%= link_to "チャットへ", room_path(current_user.rooms.find_by(society_id: society.id)) %><br>
+    <% else %>
+      <%= form_for Room.new do |f| %>
+        <%= f.hidden_field :society_id, :value => society.id %>
+        <%= f.submit %>
+      <% end %>
+    <% end %>
+  <% end %>
+  
+<!--Shopでログインしてたら-->
+<% elsif society_signed_in? %>
+  <h2>ユーザー一覧</h2>
+  <br>
+  ~<%= current_society.name %>がログインしてます~
+  <%= link_to "ログアウト", destroy_society_session_path ,:method => :delete %>
+  <br>
+  <% @users.each do |user| %>
+    <%= user.name %>
+    <!-- もしチャットルームがあったらそのチャットページへ。なければ新たなチャットルームを作成 -->
+    <% if @user_ids.include?(user.id) %>
+      <br>
+      <%= link_to "チャットへ", room_path(current_shop.rooms.find_by(user_id: user.id)) %><br>
+    <% else %>
+      <%= form_for Room.new do |f| %>
+        <%= f.hidden_field :user_id, :value => user.id %>
+        <%= f.submit %>
+      <% end %>
+    <% end %>
+
+  <% end %>
+
+<!--ログインしてなかったら-->
+<% else %>
+  <h3>ユーザー</h3>
+  <%= link_to "ログイン", new_user_session_path %>
+  <%= link_to "新規登録", new_user_registration_path %>
+  <h3>ショップ</h3>
+  <%= link_to "ログイン", new_society_session_path %>
+  <%= link_to "新規登録", new_society_registration_path %>
+<% end %>

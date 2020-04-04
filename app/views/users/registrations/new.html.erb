@@ -1,0 +1,70 @@
+<h2>新規登録</h2>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+
+  <div class="field">
+    <%= f.label :氏名 %><br />
+    <%= f.text_field :name,size: 20 %>
+  </div> 
+
+  <div class="field">
+    <%= f.label :メールアドレス %><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :希望楽器 %><br />
+    <%= f.text_field :instrument,size: 20 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :経験年数 %><br />
+    <%= f.text_field :years,size: 20 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :所持楽器 %><br />
+    <%= f.text_field :have,size: 20 %>
+  </div>
+ 
+  <div class="field">
+    <%= f.label :お住まい %><br />
+    <%= f.radio_button :region, :"東京"%>
+    <%= f.label :region, "東京" %>
+    <%= f.radio_button :region, :"神奈川" %>
+    <%= f.label :region, "神奈川" %>
+    <%= f.radio_button :region, :"埼玉" %>
+    <%= f.label :region, "埼玉" %>
+    <%= f.radio_button :region, :"千葉" %>
+    <%= f.label :region, "千葉" %>
+  </div> 
+
+  
+
+  <div class="field">
+    <%= f.label :その他 %><br />
+    <%= f.text_field :region,size: 50 %>
+  </div> 
+
+
+  <div class="field">
+    <%= f.label :パスワード %>
+    <% if @minimum_password_length %>
+    <em>(最低<%= @minimum_password_length %>文字)</em>
+    <% end %><br />
+    <%= f.password_field :password, autocomplete: "new-password" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :パスワード確認 %><br />
+    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "登録" %>
+  </div>
+<% end %>
+
+<%= render "societies/shared/links" %>
+

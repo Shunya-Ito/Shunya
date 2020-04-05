@@ -19,10 +19,22 @@ class MypageController < ApplicationController
       end
     end
   end
-
-
-  def link
+  def usermypage
+    @user = User.find(params[:id])
   end
+  def societymypage
+    @society = Society.find(params[:id])
+
+    if society_signed_in?
+      @users = []
+      @entries = Entry.where(society_id: current_society.id)
+      @entries.each do |entry|
+        @user = User.find(entry.user_id)
+        @users.push(@user)
+      end
+    end
+    end
+  end
+ 
 
 
-end

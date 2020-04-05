@@ -1,4 +1,13 @@
-<h1>マイページ</h1>
+<h1><%=@society.name%>さんのマイページ</h1>
 <%= link_to '登録情報修正', societies_edit_path %>
 <%= link_to 'ログアウト', destroy_society_session_path, method: :delete %>
-<%= link_to "メッセージ", rooms_path(current_user.id),method: :post %><br />
+<%= link_to "メッセージ", rooms_path(@society.id),method: :post %>
+
+<% if society_signed_in?%>
+<div>過去のDMリスト</div>
+  <% @users.each do |user|%>
+  <%= link_to rooms_path(user.id) , method: :post do%>
+  <div><%= user.name %>さんとのDM</div>
+    <% end %>
+  <% end %>
+<% end %>

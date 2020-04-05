@@ -1,7 +1,8 @@
 <h1>チャットサンプル</h1>
 
 <% if user_signed_in? %>
-  <h3><% @society.name %>とのチャットルーム</h3>
+<%= link_to '楽団一覧へ戻る',society_all_path%>
+  <h3><%= @society.name %>とのチャットルーム</h3>
   <div class="chat-field">
     <% @messages.each do |m| %>
       <!-- メッセージがUserによるものだったら -->
@@ -20,7 +21,7 @@
     <% end %>
   </div>
 <% elsif society_signed_in?%>
-  <h3><% @user.name %>とのチャットルーム</h3>
+  <h3><%= @user.name %>とのチャットルーム</h3>
   <div class="chat-field">
     <% @messages.each do |m| %>
       <!-- メッセージがUserによるものだったら -->

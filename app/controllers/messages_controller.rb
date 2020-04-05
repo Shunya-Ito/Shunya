@@ -4,8 +4,10 @@ class MessagesController < ApplicationController
     @message = Message.new(message_params)
     #メッセージがuserによるものだったらis_user=true, shopによるものだったらis_user=false
     if user_signed_in?
+      @message.sender_id = current_user.id
       @message.is_user = true
     elsif society_signed_in?
+      @message.sender_id = current_society.id
       @message.is_user = false
     end
     @message.room_id = @room.id

@@ -1,7 +1,12 @@
 <div class="societies-container">
   <% @societies.each do |t| %>
-    <div class="society">
-      <%= t.body %>
+    <div class="society" style='border:2px solid black;margin:20px;'>
+      <%= t.name %>
+      <div>
+      <%= link_to mypage_societymypage_path(t.id) do %>
+        この楽団のマイページをみる
+      <% end %>
+       </div>
     </div>
   <% end %>
 </div>

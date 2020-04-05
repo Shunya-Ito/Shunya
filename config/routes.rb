@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-
+  root 'others#toppage' 
   devise_for :societies, controllers: { registrations: 'societies/registrations' }
   
   get 'societies/index'
@@ -20,12 +20,12 @@ Rails.application.routes.draw do
 
   get 'others/toppage' => 'others#toppage' 
   get 'others/about' => 'others#about'
-  get 'others/all' => 'others#all'
+  get 'others/all' => 'others#all',as: 'society_all'
 
-  get 'mypage/societymypage' => 'mypage#societymypage'
-  get 'mypage/usermypage' => 'mypage#usermypage'
+  get 'mypage/societymypage/:id' => 'mypage#societymypage',as:'mypage_societymypage'
+  get 'mypage/usermypage/:id' => 'mypage#usermypage',as: 'mypage_usermypage'
   get 'rooms/:id' => 'rooms#show',as: 'room_show'
-  post 'rooms/:user_id' => 'rooms#create',as: 'rooms'
+  post 'rooms/:id' => 'rooms#create',as: 'rooms'
 
   resources :rooms, :only => [:show] do
     resources :messages, :only => [:create]

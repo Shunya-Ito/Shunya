@@ -1,26 +1,29 @@
 class OthersController < ApplicationController
 
-    def new
-        @society = Society.new
-        @user = User.new
-    end
+    # def new
+    #     @society = Society.new
+    #     @user = User.new
+    # end
 
-    def index
+    # def index
+    #     @societies = Society.all
+    #     @users = User.all
+    # end
+
+    # def show
+    #     @society = Society.find(params[:id])
+    #     @user = User.find(params[:id])
+    # end
+
+    # def edit
+    #     @society = Society.find(params[:id])
+    #     @user = User.find(params[:id])
+    # end
+
+    # def link
+    # end
+    def all
         @societies = Society.all
-        @users = User.all
-    end
-
-    def show
-        @society = Society.find(params[:id])
-        @user = User.find(params[:id])
-    end
-
-    def edit
-        @society = Society.find(params[:id])
-        @user = User.find(params[:id])
-    end
-
-    def link
     end
 
     private

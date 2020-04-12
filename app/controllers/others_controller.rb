@@ -26,6 +26,9 @@ class OthersController < ApplicationController
         @societies = Society.all
     end
 
+    def toppage
+    end
+
     private
 
     def user_params

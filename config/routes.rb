@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   root 'others#toppage' 
   devise_for :societies, controllers: { registrations: 'societies/registrations' }
   
+  
   get 'societies/index'
   get 'societies/show'
   get 'societies/new'

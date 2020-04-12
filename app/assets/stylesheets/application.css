@@ -9,7 +9,91 @@
  * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
- *
- *= require_tree .
  *= require_self
  */
+ * {
+    padding: 0;
+    margin: 0;
+  }
+
+  .center {
+   text-align: center;
+  }
+  body {
+    font-family: "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro W3", "メイリオ",
+      Meiryo, "ＭＳ Ｐゴシック", sans-serif;
+  }
+  header {
+    background-color: #f19b55;
+    height: 50px;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    
+  }
+  
+  header a {
+    font-size:30px;
+    color: white; 
+    text-decoration: none; 
+    text-align: center;
+    width: 100%;
+  }
+  
+  .title{
+    text-align: center;
+  }
+
+  .header-list {
+    display: flex;
+    align-items: center;
+  }
+  header ul {
+    display: flex;
+  }
+  header li {
+    list-style: none;
+    margin-right: 40px;
+  }
+  
+  .col4 {
+    display:flex;
+  }
+
+  .col4 li {
+    width: calc(100%/4);
+
+  }
+
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #1b2538;
+  }
+  li {
+    float: left;
+    border-right: 1px solid #bbbbbb;
+  }
+  li:last-child {
+    border-right: none;
+  }
+  li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px ;
+    text-decoration: none;
+  }
+  li a:hover:not(.active) {
+    background-color: #a9bce2;
+  }
+  
+
+  
+
+
+
+
+  

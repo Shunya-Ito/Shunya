@@ -10,6 +10,22 @@
   </head>
 
   <body>
-    <%= yield %>
+    <header>
+      
+     <a href="others_toppage_path" class="title">Musicapp</a>
+      
+    </header>
+    
+    <ul class="col4">
+	    <li><%= link_to "新規登録（奏者）", new_user_registration_path %></li>
+	    <li><%= link_to "新規登録（楽団）", new_society_registration_path %></li>
+	    <li><%= link_to "ログイン（奏者）", user_session_path %></li>
+	    <li><%= link_to "ログイン（楽団）", society_session_path %></li>
+    </ul>
+
+    
+    <main>
+      <%= yield %>
+    </main>
   </body>
 </html>

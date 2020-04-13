@@ -1,0 +1,77 @@
+.center{
+    font-size: 25px;
+    color: #eee;
+}
+
+.field{
+    width: 500px;               
+    height: 60px; 
+    margin: 0 auto;
+    color: #eee;
+}
+
+input#society_name{
+    width: 250px;
+    height: 30px;
+    font-size: medium;
+}
+
+input#society_email{
+    width: 250px;
+    height: 30px;
+    font-size: medium;
+}
+
+input#society_wants{
+    width: 250px;
+    height: 30px;
+    font-size: medium;
+}
+
+input#society_activity{
+    width: 400px;
+    height: 30px;
+    font-size: medium
+}
+
+input#society_have{
+    width: 400px;
+    height: 30px;
+    font-size: medium
+}
+
+input#activity_image{
+    width: 200px;
+    height: 200px;
+    border-radius: 100px;
+    object-fit: cover;
+}
+
+input#society_other{
+    width: 400px;
+    height: 30px;
+    font-size: medium
+}
+
+input#society_password{
+    width: 250px;
+    height: 30px;
+    font-size: medium;
+}
+
+input#society_password_confirmation{
+    width: 250px;
+    height: 30px;
+    font-size: medium;
+}
+
+
+.sign-btn{
+    width: 200px;
+    font-size: 20px;
+    margin: 0 auto;
+}
+
+body{
+    background-image: url("Geek4.jpg");
+}

@@ -1,0 +1,67 @@
+.center{
+    font-size: 25px;
+    color: #eee;
+}
+
+.field{
+    width: 500px;               
+    height: 60px; 
+    margin: 0 auto;
+    color: #eee;
+}
+
+input#user_name{
+    width: 250px;
+    height: 30px;
+    font-size: medium;
+}
+
+input#user_email{
+    width: 250px;
+    height: 30px;
+    font-size: medium;
+}
+
+input#user_instrument{
+    height: 30px;
+    font-size: medium;
+}
+
+input#user_years{
+    height: 30px;
+    font-size: medium
+}
+
+input#user_have{
+    height: 30px;
+    font-size: medium
+}
+
+input#user_other{
+    width: 400px;
+    height: 30px;
+    font-size: medium
+}
+
+input#user_password{
+    width: 250px;
+    height: 30px;
+    font-size: medium;
+}
+
+input#user_password_confirmation{
+    width: 250px;
+    height: 30px;
+    font-size: medium;
+}
+
+
+.sign-btn{
+    width: 200px;
+    font-size: 20px;
+    margin: 0 auto;
+}
+
+body{
+    background-image: url("Geek1.jpg");
+}

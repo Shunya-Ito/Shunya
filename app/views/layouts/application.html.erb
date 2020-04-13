@@ -10,20 +10,43 @@
   </head>
 
   <body>
-    <header>
+    <header class="header">
       
-     <a href="others_toppage_path" class="title">Musicapp</a>
+     <a href="http://localhost:3000/" class="title">Musicapp</a>
       
-    </header>
-    
-    <ul class="col4">
-	    <li><%= link_to "新規登録（奏者）", new_user_registration_path %></li>
-	    <li><%= link_to "新規登録（楽団）", new_society_registration_path %></li>
-	    <li><%= link_to "ログイン（奏者）", user_session_path %></li>
-	    <li><%= link_to "ログイン（楽団）", society_session_path %></li>
-    </ul>
+     <nav class="global-nav">
+       <ul class="global-nav__list">
+         <li class="global-nav__item"><%= link_to "新規登録（奏者）", new_user_registration_path %></li>
+         <li class="global-nav__item"><%= link_to "新規登録（楽団）", new_society_registration_path %></li>
+         <li class="global-nav__item"><%= link_to "ログイン（奏者）", user_session_path %></li></li>
+         <li class="global-nav__item"><%= link_to "ログイン（楽団）", society_session_path %></li>
+       </ul>
+     </nav>
+     <div class="hamburger" id="js-hamburger">
+       <span class="hamburger__line hamburger__line--1"></span>
+       <span class="hamburger__line hamburger__line--2"></span>
+       <span class="hamburger__line hamburger__line--3"></span>
+     </div>
+     <div class="black-bg" id="js-black-bg"></div>
 
-    
+     <script>
+       function toggleNav() {
+       var body = document.body;
+       var hamburger = document.getElementById('js-hamburger');
+       var blackBg = document.getElementById('js-black-bg');
+  
+       hamburger.addEventListener('click', function() {
+       body.classList.toggle('nav-open');
+       });
+       blackBg.addEventListener('click', function() {
+       body.classList.remove('nav-open');
+       });
+       }toggleNav();
+     </script>
+
+     
+    </header>
+
     <main>
       <%= yield %>
     </main>

@@ -1,11 +1,12 @@
-<h2>新規登録</h2>
+<%= stylesheet_link_tag 'users', :media => "all" %>
+<div class= "center" >新規登録（奏者）</div>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
   <div class="field">
     <%= f.label :氏名 %><br />
-    <%= f.text_field :name,size: 20 %>
+    <%= f.text_field :name %>
   </div> 
 
   <div class="field">
@@ -44,7 +45,7 @@
 
   <div class="field">
     <%= f.label :その他 %><br />
-    <%= f.text_field :region,size: 50 %>
+    <%= f.text_field :other,size: 50 %>
   </div> 
 
 
@@ -62,9 +63,9 @@
   </div>
 
   <div class="actions">
-    <%= f.submit "登録" %>
+    <%= f.submit "登録" ,class:'sign-btn' %>
   </div>
 <% end %>
 
-<%= render "societies/shared/links" %>
+
 
